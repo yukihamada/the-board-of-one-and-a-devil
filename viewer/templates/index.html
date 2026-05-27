@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<meta name="theme-color" content="#faf8f3" />
+<title>6人の役員と1匹の悪魔 ─ ひとり会社の取締役会（プレビュー版）</title>
+<meta property="og:title" content="6人の役員と1匹の悪魔 ─ ひとり会社の取締役会" />
+<meta property="og:description" content="ひとり会社の代表が、自分の中に CEO/CMO/CTO/COO/CFO と1匹の悪魔を立てて、毎週日曜に取締役会を開いた半年間の議事録。" />
+<meta property="og:type" content="book" />
+<style>
+  :root {
+    --bg: #faf8f3;
+    --fg: #1a1a1a;
+    --muted: #555;
+    --line: #d8d2c0;
+    --accent: #8a2a1f;
+    --quote: #4a4a4a;
+    --side-bg: rgba(255,255,255,.92);
+    --content-w: 720px;
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  }
+  [data-theme="dark"] {
+    --bg: #15140f;
+    --fg: #e6e2d2;
+    --muted: #8b8676;
+    --line: #2e2b21;
+    --accent: #d8a890;
+    --quote: #b7b2a0;
+    --side-bg: rgba(20,18,14,.92);
+  }
+  [data-theme="sepia"] {
+    --bg: #f3e9d2;
+    --fg: #3a2a17;
+    --muted: #6b5740;
+    --line: #cdbf9c;
+    --accent: #8a2a1f;
+    --quote: #5b4a32;
+    --side-bg: rgba(243,233,210,.94);
+  }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); }
+  body { font-family: var(--serif); line-height: 1.95; font-size: 17px; }
+  body.font-sans { font-family: var(--sans); }
+  body.size-l { font-size: 19px; }
+  body.size-xl { font-size: 21px; }
+  body.size-s { font-size: 15px; }
+
+  /* Top bar */
+  header.bar {
+    position: sticky; top: 0; z-index: 30;
+    backdrop-filter: blur(12px);
+    background: var(--side-bg);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 16px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--sans); font-size: 13px;
+  }
+  header.bar .title { font-weight: 700; letter-spacing: 0.03em; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  header.bar button { font: inherit; cursor: pointer; padding: 6px 10px; border-radius: 4px; border: 1px solid var(--line); background: transparent; color: var(--fg); }
+  header.bar button:hover { background: var(--bg); }
+  header.bar .menu-btn { font-size: 18px; padding: 4px 10px; }
+  #progress {
+    position: absolute; bottom: 0; left: 0; height: 2px; background: var(--accent); width: 0%;
+    transition: width 120ms linear;
+  }
+
+  /* Main content */
+  main { max-width: var(--content-w); margin: 0 auto; padding: 48px 22px 200px; }
+  h1, h2, h3, h4 { font-family: var(--sans); letter-spacing: 0.02em; line-height: 1.4; scroll-margin-top: 70px; }
+  h1 { font-size: 32px; font-weight: 800; margin: 56px 0 16px; }
+  h2 { font-size: 22px; font-weight: 700; margin: 64px 0 18px; padding-top: 28px; border-top: 1px solid var(--line); }
+  h3 { font-size: 18px; font-weight: 700; margin: 40px 0 12px; }
+  blockquote { border-left: 3px solid var(--line); margin: 24px 0; padding: 4px 18px; color: var(--quote); font-size: 16px; }
+  blockquote::before { content: ""; }
+  hr { border: none; border-top: 1px dashed var(--line); margin: 48px 0; }
+  p { margin: 18px 0; }
+  ul, ol { padding-left: 1.6em; }
+  em { color: var(--quote); }
+  strong { color: var(--accent); }
+  code { background: rgba(0,0,0,.05); padding: 2px 6px; border-radius: 3px; font-size: 0.92em; }
+  [data-theme="dark"] code { background: rgba(255,255,255,.07); }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+  /* TOC drawer */
+  .drawer {
+    position: fixed; top: 0; left: 0; height: 100%; width: 320px;
+    background: var(--side-bg); border-right: 1px solid var(--line);
+    transform: translateX(-110%); transition: transform .25s ease;
+    z-index: 40; padding: 60px 18px 24px; overflow-y: auto;
+    font-family: var(--sans); font-size: 14px;
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer h4 { font-size: 11px; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; margin: 18px 0 8px; }
+  .drawer ol, .drawer ul { padding-left: 0; list-style: none; margin: 0; }
+  .drawer li { padding: 6px 0; }
+  .drawer a { color: var(--fg); text-decoration: none; }
+  .drawer a:hover { color: var(--accent); }
+  .scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 35; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .scrim.show { opacity: 1; pointer-events: auto; }
+
+  /* Footer hint */
+  footer.hint {
+    position: fixed; bottom: 12px; right: 14px; z-index: 25;
+    font-family: var(--sans); font-size: 11px; color: var(--muted);
+    background: var(--side-bg); padding: 6px 12px; border-radius: 20px;
+    border: 1px solid var(--line);
+  }
+
+  /* Cover splash */
+  #splash { padding: 40px 22px 80px; text-align: center; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  #splash .cover-frame { display: block; max-width: 360px; margin: 0 auto 28px; border-radius: 6px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,.12); background: #f5f1e6; }
+  #splash .cover-frame img { display: block; width: 100%; height: auto; }
+  #splash .label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.32em; color: var(--muted); text-transform: uppercase; }
+  #splash h1 { font-family: var(--sans); font-size: 38px; line-height: 1.35; margin: 18px 0 10px; }
+  #splash .sub { font-family: var(--sans); font-size: 15px; color: var(--muted); margin: 0 0 18px; }
+  #splash .author { font-family: var(--sans); font-size: 13px; color: var(--fg); margin-top: 14px; letter-spacing: 0.08em; }
+  #splash .obi { display: inline-block; padding: 8px 14px; background: var(--accent); color: #fff; font-family: var(--sans); font-size: 13px; letter-spacing: 0.08em; margin-top: 24px; border-radius: 2px; }
+  #splash .obi small { display: block; opacity: 0.85; font-size: 10px; letter-spacing: 0.16em; margin-top: 4px; }
+  #splash .gallery-link { display: block; font-family: var(--sans); font-size: 11px; color: var(--muted); margin-top: 18px; letter-spacing: 0.12em; }
+  #splash .gallery-link a { color: var(--accent); }
+
+  /* Chapter illustrations */
+  .chapter-illustration { margin: 56px -22px 12px; padding: 0; }
+  .chapter-illustration img { display: block; width: 100%; height: auto; max-height: 380px; object-fit: cover; border-radius: 4px; }
+  @media (min-width: 720px) {
+    .chapter-illustration { margin: 64px 0 12px; }
+    .chapter-illustration img { max-height: 420px; border-radius: 6px; }
+  }
+
+  /* Settings popover */
+  .pop {
+    position: absolute; top: 56px; right: 14px; background: var(--side-bg); border: 1px solid var(--line);
+    padding: 14px; border-radius: 8px; display: none; z-index: 50; font-family: var(--sans); font-size: 13px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  }
+  .pop.open { display: block; }
+  .pop .row { display: flex; gap: 6px; margin: 8px 0; align-items: center; }
+  .pop .row > span { font-size: 11px; color: var(--muted); width: 60px; flex: 0 0 auto; letter-spacing: 0.1em; }
+  .pop button { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--fg); cursor: pointer; }
+  .pop button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  @media (max-width: 600px) {
+    main { padding: 32px 18px 160px; }
+    #splash h1 { font-size: 30px; }
+    .drawer { width: 88%; }
+    header.bar .title { font-size: 12px; }
+    footer.hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <button class="menu-btn" id="toc-toggle" aria-label="目次">☰</button>
+  <div class="title">6人の役員と1匹の悪魔 ─ ひとり会社の取締役会（プレビュー版）</div>
+  <button id="settings-toggle" aria-label="表示設定">Aa</button>
+  <div id="progress"></div>
+</header>
+
+<div class="pop" id="settings">
+  <div class="row"><span>テーマ</span>
+    <button data-theme="light">Light</button>
+    <button data-theme="sepia">Sepia</button>
+    <button data-theme="dark">Dark</button>
+  </div>
+  <div class="row"><span>書体</span>
+    <button data-font="serif">明朝</button>
+    <button data-font="sans">ゴシック</button>
+  </div>
+  <div class="row"><span>文字</span>
+    <button data-size="s">S</button>
+    <button data-size="m">M</button>
+    <button data-size="l">L</button>
+    <button data-size="xl">XL</button>
+  </div>
+</div>
+
+<aside class="drawer" id="toc"><h4>目次</h4><nav id="toc-nav"></nav></aside>
+<div class="scrim" id="scrim"></div>
+
+<main>
+  <section id="splash">
+    <div class="cover-frame"><img src="/cover-main.png" alt="6人の役員と1匹の悪魔 表紙" /></div>
+    <div class="label">Atsume Press · Preview Edition</div>
+    <h1>6人の役員と<br/>1匹の悪魔</h1>
+    <p class="sub">— ひとり会社の取締役会</p>
+    <p class="author">粟田Kenny</p>
+    <div class="obi">「俺も柔術習おうかな。」<small>── 帯依頼ドラフト（推薦コメント検討中）</small></div>
+    <p class="gallery-link">表紙候補（10案）→ <a href="/gallery.html">/gallery.html</a></p>
+  </section>
+
+  <article id="book">
+    {{BOOK_BODY}}
+  </article>
+</main>
+
+<footer class="hint">← / → / Space で進む · M で目次 · T で表示設定</footer>
+
+<script>
+(function(){
+  const $ = (s, p=document) => p.querySelector(s);
+  const $$ = (s, p=document) => Array.from(p.querySelectorAll(s));
+
+  // ---- Settings persistence ----
+  const ls = window.localStorage;
+  const KEY = "tboo_settings_v1";
+  const saved = (() => { try { return JSON.parse(ls.getItem(KEY)) || {}; } catch (_) { return {}; } })();
+  const apply = (k, v) => {
+    if (k === "theme") document.documentElement.setAttribute("data-theme", v);
+    if (k === "font") document.body.classList.toggle("font-sans", v === "sans");
+    if (k === "size") {
+      document.body.classList.remove("size-s","size-m","size-l","size-xl");
+      if (v && v !== "m") document.body.classList.add("size-" + v);
+    }
+    saved[k] = v;
+    ls.setItem(KEY, JSON.stringify(saved));
+    refreshActive();
+  };
+  const refreshActive = () => {
+    $$("#settings [data-theme]").forEach(b => b.classList.toggle("on", b.dataset.theme === (saved.theme || "light")));
+    $$("#settings [data-font]").forEach(b => b.classList.toggle("on", b.dataset.font === (saved.font || "serif")));
+    $$("#settings [data-size]").forEach(b => b.classList.toggle("on", b.dataset.size === (saved.size || "m")));
+  };
+  apply("theme", saved.theme || "light");
+  apply("font", saved.font || "serif");
+  apply("size", saved.size || "m");
+
+  $$("#settings button").forEach(b => b.addEventListener("click", () => {
+    if (b.dataset.theme) apply("theme", b.dataset.theme);
+    if (b.dataset.font) apply("font", b.dataset.font);
+    if (b.dataset.size) apply("size", b.dataset.size);
+  }));
+
+  // ---- Toggles ----
+  const drawer = $("#toc"), scrim = $("#scrim"), pop = $("#settings");
+  const openToc = () => { drawer.classList.add("open"); scrim.classList.add("show"); pop.classList.remove("open"); };
+  const closeToc = () => { drawer.classList.remove("open"); scrim.classList.remove("show"); };
+  $("#toc-toggle").addEventListener("click", () => drawer.classList.contains("open") ? closeToc() : openToc());
+  $("#scrim").addEventListener("click", closeToc);
+  $("#settings-toggle").addEventListener("click", () => pop.classList.toggle("open"));
+  document.addEventListener("click", (e) => {
+    if (!pop.contains(e.target) && e.target.id !== "settings-toggle") pop.classList.remove("open");
+  });
+
+  // ---- TOC build (h2 を章として拾う) ----
+  const tocNav = $("#toc-nav");
+  const ol = document.createElement("ol");
+  let n = 0;
+  $$("article#book h2").forEach((h, i) => {
+    n++;
+    if (!h.id) h.id = "ch-" + n;
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + h.id;
+    a.textContent = h.textContent;
+    a.addEventListener("click", () => setTimeout(closeToc, 50));
+    li.appendChild(a);
+    ol.appendChild(li);
+  });
+  tocNav.appendChild(ol);
+
+  // ---- Progress bar ----
+  const progress = $("#progress");
+  const updateProgress = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    progress.style.width = pct.toFixed(2) + "%";
+  };
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+
+  // ---- Reading position memory ----
+  const POS = "tboo_pos_v1";
+  const savePos = () => ls.setItem(POS, String(window.scrollY));
+  let posTimer = null;
+  window.addEventListener("scroll", () => { clearTimeout(posTimer); posTimer = setTimeout(savePos, 400); }, { passive: true });
+  const pos = Number(ls.getItem(POS) || 0);
+  if (pos > 200) setTimeout(() => window.scrollTo(0, pos), 50);
+
+  // ---- Keyboard shortcuts ----
+  document.addEventListener("keydown", (e) => {
+    if (["INPUT","TEXTAREA"].includes(document.activeElement.tagName)) return;
+    if (e.key === "ArrowDown" || e.key === " " || e.key === "PageDown") { window.scrollBy({ top: window.innerHeight * 0.85, behavior: "smooth" }); e.preventDefault(); }
+    else if (e.key === "ArrowUp" || e.key === "PageUp") { window.scrollBy({ top: -window.innerHeight * 0.85, behavior: "smooth" }); e.preventDefault(); }
+    else if (e.key === "ArrowRight") { const c = currentChapter(); if (c && c.next) c.next.scrollIntoView({ behavior: "smooth" }); }
+    else if (e.key === "ArrowLeft") { const c = currentChapter(); if (c && c.prev) c.prev.scrollIntoView({ behavior: "smooth" }); }
+    else if (e.key === "m" || e.key === "M") { drawer.classList.contains("open") ? closeToc() : openToc(); }
+    else if (e.key === "t" || e.key === "T") { pop.classList.toggle("open"); }
+  });
+
+  const chapters = () => $$("article#book h2");
+  const currentChapter = () => {
+    const list = chapters();
+    const y = window.scrollY + 80;
+    let idx = 0;
+    for (let i = 0; i < list.length; i++) { if (list[i].offsetTop <= y) idx = i; }
+    return { current: list[idx], prev: list[idx - 1], next: list[idx + 1] };
+  };
+})();
+</script>
+</body>
+</html>

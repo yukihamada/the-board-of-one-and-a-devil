@@ -1,0 +1,12 @@
+{
+  "name": "the-board-of-one-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {}
+}

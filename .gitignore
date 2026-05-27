@@ -42,3 +42,8 @@ build/*.bak
 build/book.epub
 build/book.pdf
 build/cover-raw.png
+
+# --- Gemini API key 等の運用秘密 (Public化 絶対NG) ---
+.secrets/
+.env.gemini
+viewer/.env
