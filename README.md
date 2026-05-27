@@ -20,18 +20,16 @@
 
 ## このリポジトリにあるもの
 
-このリポジトリは本書の **オープン版** です。本文全文ではなく、以下のサンプルだけを公開しています:
+このリポジトリは本書の **オープン版（全文公開）** です:
 
 | ファイル | 内容 |
 |---|---|
-| `manuscript/ch_00_prologue.md` | プロローグ「ある日曜日、椅子は 7 脚あった」 |
-| `manuscript/ch_01_yaranai.md`  | 第1回 取締役会 ─ 「やらない」をどう決めるかについて |
-| `manuscript/ch_02_thinking_open.md` | 第2回 取締役会 ─ 「人物像の開示」が提案書を超える件について |
-| `manuscript/ch_99_epilogue.md` | エピローグ「椅子は、7 脚あっていい」 |
+| `manuscript/full.md` | **本文全文**（プロローグ＋第1〜10回＋エピローグ、43,710字、Kindle 換算 約97ページ） |
+| `manuscript/ch_00_prologue.md` 〜 `ch_99_epilogue.md` | 章別ファイル（全12章） |
 | `cover/cover.jpg` `cover/cover.png` `cover/cover.svg` | 表紙画像（CC BY-NC 4.0） |
 | `kdp-package/book-metadata.json` | 書誌情報マスター |
 
-中盤 7 章（第3回〜第10回）は **本書を購入してお読みください**。
+レビューしやすいよう、フィードバック歓迎モードで公開しています。誤字・違和感・感想は [Issues](../../issues) または [Discussions](../../discussions) へ。
 
 ## Amazon.co.jp で買う
 

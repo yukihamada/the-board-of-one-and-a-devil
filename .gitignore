@@ -2,15 +2,14 @@
 research/
 manuscript/outline.md
 
-# --- マーケ運用の実 API キー・実数値が混じる可能性のあるもの ---
-marketing/ads-engine/.env
-marketing/ads-engine/.env.*
-marketing/ads-engine/node_modules/
-marketing/ads-engine/dist/
-marketing/ads-engine/logs/
-marketing/ads-engine/reports/
-marketing/ads-engine/config.yaml
-marketing/ads-engine/config.local.yaml
+# --- 内部運用スクリプト（本人NGワード一覧を含むため Private 保持） ---
+scripts/safety-scan.sh
+
+# --- マーケ戦略文書一式は商業的・運用的に Private 保持（Public化しない） ---
+marketing/
+
+# --- gated-reader (内部運用 Worker) は allowlist email/個人情報を含むため Private 保持 ---
+gated-reader/
 
 # --- 一般 ---
 .DS_Store
@@ -26,17 +25,18 @@ build/*.bak
 .idea/
 .vscode/
 
-# --- 暫定: 本文全文は Public しない（サンプル章だけ別ディレクトリに切り出して公開） ---
-manuscript/full.md
-manuscript/ch_03_jigoku.md
-manuscript/ch_04_devil_hire.md
-manuscript/ch_05_hiramоji.md
-manuscript/ch_06_omakase.md
-manuscript/ch_07_36houses.md
-manuscript/ch_08_kingaku_kouzou.md
-manuscript/ch_09_kotoba.md
-manuscript/ch_10_finale.md
-# プロローグ・第1回・第2回・エピローグはサンプル公開対象（除外しない）
+# --- 今回のリリースでは全文を Public 公開（中盤7章 + full.md を含む） ---
+# 過去の Amazon売上保護のための除外設定は解除済み。後で再非公開化する場合は
+# 下記をコメントアウト解除して git rm --cached する。
+# manuscript/full.md
+# manuscript/ch_03_jigoku.md
+# manuscript/ch_04_devil_hire.md
+# manuscript/ch_05_hiramоji.md
+# manuscript/ch_06_omakase.md
+# manuscript/ch_07_36houses.md
+# manuscript/ch_08_kingaku_kouzou.md
+# manuscript/ch_09_kotoba.md
+# manuscript/ch_10_finale.md
 
 # --- ビルド成果物 (KDP 用) は Releases にアップ、リポには含めない ---
 build/book.epub

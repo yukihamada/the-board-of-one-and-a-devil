@@ -20,12 +20,12 @@
 
 ---
 
-## 1. パッケージファイルの場所
+## 1. パッケージファイルの場所（このリポジトリ Root からの相対パス）
 ```
-/Users/kentarohawata/work/book-6months/
-├── build/book.epub                  ← Kindle 本体
+./
+├── build/book.epub                  ← Kindle 本体（KDP 入稿ファイル）
 ├── build/book.pdf                   ← ペーパーバック用（任意、第2段で）
-├── cover/cover.jpg                  ← 1600×2560 表紙
+├── cover/cover.jpg                  ← 1600×2560 表紙（KDP 入稿画像）
 ├── cover/cover.png                  ← 同上 PNG
 └── kdp-package/
     ├── book-metadata.json           ← 書誌情報マスター
@@ -128,7 +128,7 @@ Kindle 電子書籍を出してから 1〜2 週間後の追加投入を推奨。
 |---|---|
 | EPUB アップロードでエラー | Kindle Previewer 3 をローカルでインストールして検証、要因（フォント埋め込み・画像サイズ・XHTML 不正）を修正 |
 | 表紙が「鮮明さ不足」で却下 | `cover/cover.png` を使う or 倍解像度で再書き出し |
-| カテゴリーが反映されない | 公開後 24h 待つ。それでも変わらなければ kdp-support@amazon.com に依頼 |
+| カテゴリーが反映されない | 公開後 24h 待つ。それでも変わらなければ KDP 管理画面のお問い合わせフォームから依頼 |
 | 「審査中」が72hを超える | KDP > サポート > お問い合わせ |
 | 内容に修正が必要 | KDP > 本棚 > 該当書 > 「本のコンテンツを更新」で再アップロード（既に購入した読者にも更新通知が届く） |
 
