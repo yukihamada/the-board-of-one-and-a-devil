@@ -44,14 +44,14 @@
 | 項目 | 入力値 | book-metadata.json のキー |
 |---|---|---|
 | 言語 | 日本語 | publisher.language |
-| 本のタイトル | 6人の役員と1匹の悪魔 | title.main |
-| サブタイトル | ひとり会社の取締役会 | title.subtitle |
-| タイトルのふりがな | ロクニンノヤクインノトイッピキノアクマ | title.reading |
+| 本のタイトル | ひとり、なのに満員御礼。 | title.main |
+| サブタイトル | 6人の役員と1匹の悪魔、ときどき、もう1脚 | title.subtitle |
+| タイトルのふりがな | ヒトリ、ナノニマンインオンレイ。 | title.reading |
 | シリーズ | （空欄） | — |
 | エディション番号 | （空欄、初版） | — |
 | 著者 | 粟田Kenny | author.name |
 | 著者ふりがな | アワタ ケニー | author.name_reading |
-| 寄稿者 | （なし） | — |
+| 寄稿者 | 濱田優貴（著者として追加） | co_author.name |
 | 内容紹介 | metadata の description.short_amazon_2000bytes をコピペ | description |
 | 出版権 | 私はこの本の著作権者であり、必要な権利を保有しています | publishing_rights |
 | キーワード | metadata.keywords_7 の7語をカンマ区切りで | keywords_7 |

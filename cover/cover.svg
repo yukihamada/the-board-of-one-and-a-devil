@@ -67,7 +67,10 @@
   <!-- ============================== -->
 
   <!-- 小さな飾り: 上部の章番号風マーカー -->
-  <text x="800" y="280" class="marker" font-size="26" text-anchor="middle">— A BUSINESS FABLE —</text>
+  <text x="800" y="232" class="marker" font-size="26" text-anchor="middle">— A BUSINESS FABLE —</text>
+
+  <!-- キャッチコピー（バカうれしそうな一行） -->
+  <text x="800" y="348" class="subtitle-jp" font-size="52" text-anchor="middle">ひとり、なのに満員御礼。</text>
 
   <!-- メインタイトル: 6人の役員と1匹の悪魔 -->
   <!-- 2行構成: 「6人の役員と」/「1匹の悪魔」 -->
@@ -78,7 +81,7 @@
   <line x1="600" y1="770" x2="1000" y2="770" stroke="#1a1a1a" stroke-width="1.5"/>
 
   <!-- サブタイトル -->
-  <text x="800" y="850" class="subtitle-jp" font-size="46" text-anchor="middle">ひとり会社の取締役会</text>
+  <text x="800" y="850" class="subtitle-jp" font-size="40" text-anchor="middle">ひとり会社の取締役会、ときどき、もう1脚</text>
 
   <!-- ============================== -->
   <!-- 中央 40%: 椅子と机のイラスト (y: 896 - 1920) -->
@@ -197,6 +200,14 @@
         <ellipse cx="0" cy="34" rx="36" ry="5" fill="#1a1a1a" opacity="0.08"/>
       </g>
 
+      <!-- 8脚目: 左短辺・ときどきの客人 CPO（破線＝常設ではない／借り物の声）。速さの矢印つき -->
+      <g transform="translate(-480 0)">
+        <rect x="-32" y="-24" width="64" height="48" rx="5" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="9 7"/>
+        <rect x="-38" y="-30" width="12" height="60" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3" stroke-dasharray="9 7"/>
+        <path d="M -16 0 L 8 0 M 0 -9 L 11 0 L 0 9" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+        <ellipse cx="0" cy="34" rx="36" ry="5" fill="#1a1a1a" opacity="0.08"/>
+      </g>
+
     </g>
 
     <!-- 悪魔椅子の前に転がるリンゴ (机外・小さめ、差し色の赤) -->
@@ -221,9 +232,9 @@
   <!-- 細い飾り罫 -->
   <line x1="650" y1="2030" x2="950" y2="2030" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
 
-  <!-- 著者: 粟田Kenny -->
-  <text x="800" y="2150" class="author-jp" font-size="56" text-anchor="middle">粟田</text>
-  <text x="800" y="2240" class="author-en" font-size="72" text-anchor="middle">Kenny</text>
+  <!-- 著者: 粟田Kenny × 濱田優貴 -->
+  <text x="800" y="2140" class="author-jp" font-size="52" text-anchor="middle">粟田Kenny ✕ 濱田優貴</text>
+  <text x="800" y="2225" class="author-en" font-size="42" text-anchor="middle">Kenny Awata  ✕  Yuki Hamada</text>
 
   <!-- ============================== -->
   <!-- 下部 10%: インプリント (y: 2304 - 2560) -->
