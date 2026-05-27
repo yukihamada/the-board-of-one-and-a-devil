@@ -1,0 +1,55 @@
+本リポジトリには複数のライセンスが共存します。
+
+================================================================
+1. 本文サンプル章 / 表紙画像 / 書誌メタデータ
+   対象: manuscript/ch_00_prologue.md
+        manuscript/ch_01_yaranai.md
+        manuscript/ch_02_thinking_open.md
+        manuscript/ch_99_epilogue.md
+        cover/cover.svg, cover/cover.jpg, cover/cover.png
+        kdp-package/book-metadata.json
+   ライセンス: Creative Commons Attribution-NonCommercial 4.0
+              International (CC BY-NC 4.0)
+   許可: 非商用での複製・改変・再配布、出典明示のもと引用
+   要件: 著者「粟田Kenny」と本書名を明示すること
+   全文: https://creativecommons.org/licenses/by-nc/4.0/legalcode.ja
+================================================================
+
+================================================================
+2. ソースコード / スクリプト / ビルド設定
+   対象: scripts/**
+        marketing/ads-engine/**
+        その他 *.sh, *.ts, *.js, *.json (ビルド/設定系)
+   ライセンス: MIT License
+
+   MIT License
+
+   Copyright (c) 2026 粟田Kenny / Atsume Press
+
+   Permission is hereby granted, free of charge, to any person
+   obtaining a copy of this software and associated documentation
+   files (the "Software"), to deal in the Software without
+   restriction, including without limitation the rights to use,
+   copy, modify, merge, publish, distribute, sublicense, and/or
+   sell copies of the Software, and to permit persons to whom the
+   Software is furnished to do so, subject to the following
+   conditions:
+
+   The above copyright notice and this permission notice shall be
+   included in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+   KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+   WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+   COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+================================================================
+
+================================================================
+3. 本文中盤 7 章（第3回〜第10回 取締役会）
+   このリポジトリには含まれません。Amazon Kindle 版を購入して
+   お読みください。無断複製・無断配布は禁止です。
+================================================================

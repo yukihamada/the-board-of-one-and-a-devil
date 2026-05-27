@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 2560"
+     width="1600" height="2560"
+     preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap');
+
+      .title-jp {
+        font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        font-weight: 900;
+        fill: #1a1a1a;
+        letter-spacing: 0.04em;
+      }
+      .subtitle-jp {
+        font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        font-weight: 400;
+        fill: #3a3a3a;
+        letter-spacing: 0.28em;
+      }
+      .author-en {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-style: italic;
+        font-weight: 500;
+        fill: #2a2a2a;
+        letter-spacing: 0.08em;
+      }
+      .author-jp {
+        font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+        font-weight: 400;
+        fill: #2a2a2a;
+        letter-spacing: 0.3em;
+      }
+      .imprint {
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-weight: 400;
+        fill: #6a6a6a;
+        letter-spacing: 0.5em;
+      }
+      .marker {
+        font-family: "Noto Sans JP", sans-serif;
+        font-weight: 400;
+        fill: #8a8a8a;
+        letter-spacing: 0.2em;
+      }
+    ]]></style>
+  </defs>
+
+  <!-- 背景: 淡いオフホワイト -->
+  <rect x="0" y="0" width="1600" height="2560" fill="#f5f1ea"/>
+
+  <!-- 紙の質感: 極薄ノイズ風のグラデーション -->
+  <rect x="0" y="0" width="1600" height="2560" fill="url(#paperGrad)" opacity="0.4"/>
+  <defs>
+    <radialGradient id="paperGrad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#e8dfd0" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 外側の細い枠線 -->
+  <rect x="80" y="80" width="1440" height="2400" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.25"/>
+
+  <!-- ============================== -->
+  <!-- 上部 35%: タイトル領域 (y: 0 - 896) -->
+  <!-- ============================== -->
+
+  <!-- 小さな飾り: 上部の章番号風マーカー -->
+  <text x="800" y="280" class="marker" font-size="26" text-anchor="middle">— A BUSINESS FABLE —</text>
+
+  <!-- メインタイトル: 6人の役員と1匹の悪魔 -->
+  <!-- 2行構成: 「6人の役員と」/「1匹の悪魔」 -->
+  <text x="800" y="490" class="title-jp" font-size="148" text-anchor="middle">6人の役員と</text>
+  <text x="800" y="680" class="title-jp" font-size="148" text-anchor="middle">1匹の悪魔</text>
+
+  <!-- 細い罫線 -->
+  <line x1="600" y1="770" x2="1000" y2="770" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- サブタイトル -->
+  <text x="800" y="850" class="subtitle-jp" font-size="46" text-anchor="middle">ひとり会社の取締役会</text>
+
+  <!-- ============================== -->
+  <!-- 中央 40%: 椅子と机のイラスト (y: 896 - 1920) -->
+  <!-- ============================== -->
+
+  <!-- イラスト領域の中心: x=800, y=1408 -->
+  <g transform="translate(800 1408)">
+
+    <!-- 長机: 俯瞰、温かいベージュ。中央 -->
+    <!-- 机本体 -->
+    <rect x="-380" y="-180" width="760" height="360" rx="14" ry="14"
+          fill="#d9c3a1" stroke="#1a1a1a" stroke-width="3"/>
+    <!-- 木目を示す薄い線 -->
+    <line x1="-360" y1="-100" x2="360" y2="-100" stroke="#b89968" stroke-width="1" opacity="0.5"/>
+    <line x1="-360" y1="0"    x2="360" y2="0"    stroke="#b89968" stroke-width="1" opacity="0.5"/>
+    <line x1="-360" y1="100"  x2="360" y2="100"  stroke="#b89968" stroke-width="1" opacity="0.5"/>
+
+    <!-- 机の上のもの -->
+    <!-- ノート (左寄り) -->
+    <g transform="translate(-180 -30) rotate(-6)">
+      <rect x="-70" y="-90" width="140" height="180" rx="4" ry="4"
+            fill="#fbfaf5" stroke="#1a1a1a" stroke-width="2.5"/>
+      <line x1="-50" y1="-50" x2="50" y2="-50" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+      <line x1="-50" y1="-20" x2="50" y2="-20" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+      <line x1="-50" y1="10"  x2="50" y2="10"  stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+      <line x1="-50" y1="40"  x2="30" y2="40"  stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+      <!-- ノートのリング/背 -->
+      <line x1="-70" y1="-90" x2="-70" y2="90" stroke="#1a1a1a" stroke-width="3"/>
+    </g>
+
+    <!-- コーヒーカップ (中央寄り) -->
+    <g transform="translate(40 -10)">
+      <!-- 受け皿 -->
+      <ellipse cx="0" cy="25" rx="60" ry="14" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="2.5"/>
+      <!-- カップ本体（俯瞰） -->
+      <ellipse cx="0" cy="0" rx="42" ry="12" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="2.5"/>
+      <ellipse cx="0" cy="0" rx="34" ry="9" fill="#4a2e1a" stroke="none"/>
+      <!-- 持ち手 -->
+      <path d="M 38 -4 Q 60 -4 60 6 Q 60 14 42 14" fill="none" stroke="#1a1a1a" stroke-width="2.5"/>
+    </g>
+
+    <!-- リンゴ (悪魔のかじりかけ・机の右上に、悪魔椅子側に転がる) -->
+    <g transform="translate(220 30)">
+      <!-- かじり跡を持つリンゴ -->
+      <path d="M -28 0
+               C -28 -22, -10 -32, 0 -28
+               C 4 -32, 14 -32, 18 -28
+               C 18 -10, 22 8, 14 22
+               C 6 32, -16 32, -24 22
+               C -32 8, -30 -2, -28 0 Z"
+            fill="#b32d2d" stroke="#1a1a1a" stroke-width="2.5"/>
+      <!-- かじり跡 (くぼみ) -->
+      <path d="M 4 -22 Q 18 -16 18 -2 Q 14 -10 4 -8 Q -2 -16 4 -22 Z"
+            fill="#f5f1ea" stroke="#1a1a1a" stroke-width="2"/>
+      <!-- 葉 -->
+      <path d="M 2 -30 Q 14 -42 24 -34 Q 18 -28 8 -28 Z"
+            fill="#5a6a3a" stroke="#1a1a1a" stroke-width="2"/>
+      <!-- 茎 -->
+      <line x1="2" y1="-30" x2="-2" y2="-36" stroke="#1a1a1a" stroke-width="2"/>
+    </g>
+
+    <!-- ============================== -->
+    <!-- 椅子 7脚 (机を囲む俯瞰) -->
+    <!-- 長辺(上下)に3脚ずつ、短辺(右)に1脚 = 計7。   -->
+    <!-- 配置: 上3、下3、右1（悪魔・小さめ） -->
+    <!-- ============================== -->
+
+    <!-- 普通の椅子のシンボル: 座面 + 背もたれ（机側を向く） -->
+    <!-- 上辺の椅子3脚 (背もたれは上、机に向かう) -->
+    <g id="chairs">
+
+      <!-- 上1 -->
+      <g transform="translate(-240 -290)">
+        <!-- 座面 -->
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <!-- 背もたれ (上側) -->
+        <rect x="-44" y="-46" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+      <!-- 上2 -->
+      <g transform="translate(0 -290)">
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <rect x="-44" y="-46" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+      <!-- 上3 -->
+      <g transform="translate(240 -290)">
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <rect x="-44" y="-46" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+
+      <!-- 下1 (背もたれは下) -->
+      <g transform="translate(-240 290)">
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <rect x="-44" y="32" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+      <!-- 下2 -->
+      <g transform="translate(0 290)">
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <rect x="-44" y="32" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+      <!-- 下3 -->
+      <g transform="translate(240 290)">
+        <rect x="-40" y="-30" width="80" height="60" rx="6" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <rect x="-44" y="32" width="88" height="14" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+      </g>
+
+      <!-- 悪魔椅子 (右側・一回り小さい・逆向き＝背もたれが机と反対=外向き) -->
+      <g transform="translate(480 0)">
+        <!-- 座面 (小さめ: 64x48) -->
+        <rect x="-32" y="-24" width="64" height="48" rx="5" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <!-- 背もたれ: 右側(外向き) -->
+        <rect x="26" y="-30" width="12" height="60" rx="3" fill="#fbfaf5" stroke="#1a1a1a" stroke-width="3"/>
+        <!-- ツノ 2本 (背もたれの上) -->
+        <polygon points="26,-30 30,-50 34,-30" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/>
+        <polygon points="34,-30 38,-50 42,-30" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/>
+        <!-- うっすら影で「異物感」 -->
+        <ellipse cx="0" cy="34" rx="36" ry="5" fill="#1a1a1a" opacity="0.08"/>
+      </g>
+
+    </g>
+
+    <!-- 悪魔椅子の前に転がるリンゴ (机外・小さめ、差し色の赤) -->
+    <g transform="translate(440 60)">
+      <path d="M -16 0
+               C -16 -12, -6 -18, 0 -16
+               C 2 -18, 8 -18, 10 -16
+               C 10 -6, 12 4, 8 12
+               C 4 18, -10 18, -14 12
+               C -18 4, -17 -2, -16 0 Z"
+            fill="#b32d2d" stroke="#1a1a1a" stroke-width="2"/>
+      <path d="M 2 -17 Q 8 -22 12 -19 Q 8 -16 4 -16 Z"
+            fill="#5a6a3a" stroke="#1a1a1a" stroke-width="1.5"/>
+    </g>
+
+  </g>
+
+  <!-- ============================== -->
+  <!-- 下部 15%: 著者名 (y: 1920 - 2304) -->
+  <!-- ============================== -->
+
+  <!-- 細い飾り罫 -->
+  <line x1="650" y1="2030" x2="950" y2="2030" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+
+  <!-- 著者: 粟田Kenny -->
+  <text x="800" y="2150" class="author-jp" font-size="56" text-anchor="middle">粟田</text>
+  <text x="800" y="2240" class="author-en" font-size="72" text-anchor="middle">Kenny</text>
+
+  <!-- ============================== -->
+  <!-- 下部 10%: インプリント (y: 2304 - 2560) -->
+  <!-- ============================== -->
+
+  <!-- 細い飾り -->
+  <circle cx="800" cy="2360" r="3" fill="#6a6a6a"/>
+
+  <text x="800" y="2440" class="imprint" font-size="28" text-anchor="middle">ATSUME · PRESS</text>
+
+</svg>
