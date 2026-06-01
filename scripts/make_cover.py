@@ -18,8 +18,20 @@ art2 = art.resize((round(art.width * scale), round(art.height * scale)), Image.L
 left = (art2.width - W) // 2; top = (art2.height - H) // 2
 canvas = art2.crop((left, top, left + W, top + H))
 
+# 下部に淡いクリームのスクリム(著者名の視認性) + 上部にも軽く(タイトル)
+overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+od = ImageDraw.Draw(overlay)
+for i in range(360):  # 下から上へ薄くなるクリーム
+    y = H - 360 + i
+    a = int(165 * (1 - i / 360))
+    od.line([(0, y), (W, y)], fill=(245, 241, 232, a))
+for i in range(620):  # 上から下へ薄くなるクリーム(タイトル背面)
+    a = int(150 * (1 - i / 620))
+    od.line([(0, i), (W, i)], fill=(245, 241, 232, a))
+canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay).convert("RGB")
+
 d = ImageDraw.Draw(canvas)
-DARK = (32, 36, 43); RED = (192, 57, 43); MUTED = (90, 90, 100)
+DARK = (28, 31, 38); RED = (192, 57, 43); MUTED = (96, 96, 106)
 
 def center(text, font, y, fill):
     w = d.textlength(text, font=font)
