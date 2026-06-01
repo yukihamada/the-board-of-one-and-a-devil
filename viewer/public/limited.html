@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex,nofollow" />
 <title>署名番号入り 限定版 ─ 6人の役員と1匹の悪魔</title>
+<!--
+  購買心理の設計メモ（Cialdini 7原則＋日本のLP定石。捏造はしない）:
+  1 ファーストビュー = ベネフィット＋誠実な希少性＋CTA即提示
+  2 共感(痛み)       = 決められない夜 → 自分ごと化
+  3 返報性/リスク除去 = 全文を無料で読める → 物理は"持つ/渡す"ため（試してから買える）
+  4 権威             = 著者が実際にひとり会社で半年回した実話（脚色でなく議事録）
+  5 保有効果/同一性   = 「あなたの番号＝あなたの席」、番号は二度と出ない(損失回避)
+  6 希少性の"理由"    = なぜ300か=2人で署名し手渡す限界（理由つき希少は信頼される）
+  7 アンカリング      = ¥3,800を顧問料/会食より下に置く
+  8 反応抵抗の解除     = 悪魔が「ほんとに要る?」と先に言う＝押し売り感を消す
+  ※社会的証明(推薦・購入数)は本物が出てから挿入。空カウンター/捏造は置かない。
+-->
 <style>
   :root{ --bg:#0b0b0d; --fg:#eceae3; --muted:#8c8c98; --accent:#c0392b; --line:#23232b; --card:#15151a; }
   *{ box-sizing:border-box; margin:0; padding:0; }
@@ -12,84 +24,140 @@
   body{ background:var(--bg); color:var(--fg);
     font-family:-apple-system,"Hiragino Mincho ProN","Yu Mincho",serif; line-height:1.95; font-size:17px; }
   .sans{ font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif; }
-  .wrap{ max-width:680px; margin:0 auto; padding:64px 22px 96px; }
+  .wrap{ max-width:680px; margin:0 auto; padding:56px 22px 60px; }
+  section{ padding:34px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
   .kick{ font-family:-apple-system,"Hiragino Sans",sans-serif; letter-spacing:.4em; font-size:11px; color:var(--muted); }
-  h1{ font-size:clamp(30px,7vw,52px); font-weight:800; line-height:1.2; margin:14px 0 6px; letter-spacing:.02em; }
+  h1{ font-size:clamp(30px,7.5vw,54px); font-weight:800; line-height:1.18; margin:14px 0 10px; letter-spacing:.02em; }
   h1 .dot{ color:var(--accent); }
-  .sub{ color:var(--muted); font-size:15px; margin-bottom:30px; }
-  .seats{ display:inline-flex; align-items:baseline; gap:8px; border:1px solid var(--line); border-radius:999px;
-    padding:8px 18px; font-family:-apple-system,"Hiragino Sans",sans-serif; margin:6px 0 34px; }
-  .seats b{ font-size:26px; font-weight:800; color:var(--accent); }
-  .seats span{ font-size:12px; color:var(--muted); }
-  .lead{ font-size:19px; line-height:2.0; margin:26px 0; }
-  .lead em{ color:var(--accent); font-style:normal; font-weight:700; }
-  h2{ font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:15px; letter-spacing:.12em; color:var(--muted);
-    margin:44px 0 14px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+  .tagline{ font-size:clamp(17px,3.4vw,21px); font-weight:700; line-height:1.7; margin:18px 0; }
+  .tagline em{ color:var(--accent); font-style:normal; }
+  .sub{ color:var(--muted); font-size:14px; }
+  .badge{ display:inline-flex; align-items:baseline; gap:8px; border:1px solid var(--accent); border-radius:999px;
+    padding:7px 16px; font-family:-apple-system,"Hiragino Sans",sans-serif; margin:20px 0 26px; color:#f0d0cc; }
+  .badge b{ font-size:20px; font-weight:800; color:var(--accent); }
+  .badge span{ font-size:12px; }
+  h2{ font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:13px; letter-spacing:.16em; color:var(--accent);
+    margin-bottom:14px; }
+  p+p{ margin-top:14px; }
+  .devil{ border-left:2px solid var(--accent); padding:8px 0 8px 16px; margin:8px 0; font-size:18px; }
+  .devil span{ display:block; font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:13px; color:var(--muted); margin-top:6px; }
   ul{ list-style:none; }
-  li{ padding:9px 0 9px 22px; position:relative; }
-  li::before{ content:"▸"; color:var(--accent); position:absolute; left:0; }
-  .price{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:18px 0; }
-  .price .n{ font-family:-apple-system,"Hiragino Sans",sans-serif; }
-  .price .amt{ font-size:30px; font-weight:800; }
-  .price .amt small{ font-size:14px; color:var(--muted); font-weight:400; }
+  li{ padding:8px 0 8px 24px; position:relative; }
+  li::before{ content:"▸"; color:var(--accent); position:absolute; left:0; top:8px; }
+  li b{ color:var(--fg); }
+  .anchor{ color:var(--muted); font-size:15px; }
+  .anchor s{ color:#5a5a64; }
+  .price{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:20px 0 6px; }
+  .price .n{ font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:14px; color:var(--muted); }
+  .price .amt{ font-size:32px; font-weight:800; font-family:-apple-system,"Hiragino Sans",sans-serif; margin-top:4px; }
+  .price .amt small{ font-size:13px; color:var(--muted); font-weight:400; }
   .cta{ display:block; text-align:center; background:var(--accent); color:#fff; text-decoration:none;
-    font-family:-apple-system,"Hiragino Sans",sans-serif; font-weight:800; font-size:17px;
-    padding:18px; border-radius:14px; margin:30px 0 12px; box-shadow:0 10px 40px rgba(192,57,43,.35); }
+    font-family:-apple-system,"Hiragino Sans",sans-serif; font-weight:800; font-size:18px;
+    padding:19px; border-radius:14px; margin:18px 0 10px; box-shadow:0 10px 40px rgba(192,57,43,.38); }
+  .cta:hover{ filter:brightness(1.08); }
   .cta.ghost{ background:transparent; color:var(--fg); border:1px solid var(--line); box-shadow:none; font-weight:600; font-size:14px; }
-  .note{ color:var(--muted); font-size:13px; line-height:1.8; }
-  .foot{ margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:#6a6a76; font-size:12px;
-    font-family:-apple-system,"Hiragino Sans",sans-serif; }
+  .cta .small{ display:block; font-weight:400; font-size:12px; opacity:.85; margin-top:4px; }
+  .cta:disabled{ opacity:.5; }
+  .qtyrow{ display:flex; align-items:center; gap:10px; margin:8px 0 2px; font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:14px; color:var(--muted); }
+  .qtyrow select{ background:var(--card); color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:8px 14px; font-size:15px; }
+  #thanks{ display:none; background:var(--card); border:1px solid var(--accent); border-radius:12px; padding:16px 18px; margin-bottom:24px; font-family:-apple-system,"Hiragino Sans",sans-serif; font-size:14px; line-height:1.7; }
+  .reassure{ color:var(--muted); font-size:13px; line-height:1.85; text-align:center; }
+  .foot{ margin-top:14px; color:#6a6a76; font-size:12px; font-family:-apple-system,"Hiragino Sans",sans-serif; text-align:center; }
   .foot a{ color:#9a9aa6; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <p class="kick">SIGNED & NUMBERED ─ FIRST EDITION</p>
-  <h1>6人の役員と<br>1匹の悪魔<span class="dot">.</span></h1>
-  <p class="sub sans">署名番号入り 限定版 ── ひとり会社の取締役会</p>
 
-  <div class="seats sans"><b id="left">300</b><span>/ 300 席　残り</span></div>
+  <div id="thanks">ご予約ありがとうございます。番号を確保し、署名のうえ順次お届けします。確認メールをご確認ください。</div>
 
-  <p class="lead">
-    本は、Kindleで読めます。<br>
-    けれどこの一冊は、<em>渡すための本</em>です。<br>
-    著者の署名と、あなただけの<em>通し番号</em>を入れて、手から手へ。
-  </p>
+  <!-- 1. ファーストビュー：ベネフィット＋誠実な希少性＋即CTA -->
+  <section style="border-bottom:none;padding-top:8px">
+    <p class="kick">SIGNED &amp; NUMBERED ─ FIRST EDITION</p>
+    <h1>6人の役員と<br>1匹の悪魔<span class="dot">.</span></h1>
+    <p class="tagline">「ひとりで決める夜」を、<em>終わらせる</em>本。<br>その初版を、署名と<em>あなたの番号</em>で。</p>
+    <div class="badge sans"><b>300</b><span>部限定 ・ 通し番号入り ・ 直販のみ</span></div>
+    <a class="cta sans" href="#order">席を取る（番号を確保）<span class="small">受注制作・まず全文は無料で読めます</span></a>
+  </section>
 
-  <h2>この限定版だけのもの</h2>
-  <ul class="sans">
-    <li><b>初版 300 部限定</b>・1〜300 の通し番号入り（番号＝あなたの「席」）</li>
-    <li>著者 <b>粟田Kenny</b> の手書き署名</li>
-    <li>「取締役会テンプレート」別丁カード付き（そのまま自分の会議に使える）</li>
-    <li>Amazon を通さない<b>直販</b>。手渡し・サイン会・コミュニティ頒布</li>
-  </ul>
+  <!-- 2. 共感（痛み）：自分ごと化 -->
+  <section>
+    <h2>こんな夜、ありませんか</h2>
+    <p>布団の中で、明日の小さな返事ひとつ、来週の少し大きな決断ひとつを抱えて、眠れない。相談できる相手は、大人になるほど、案外いない。</p>
+    <p>この本の著者は、ひとり会社の経営者です。同じ夜を、こう変えました ──<b>自分の中に、6人の役員と1匹の悪魔を雇って、毎週日曜に取締役会を開いた。</b></p>
+  </section>
 
-  <div class="price">
-    <div class="n sans">署名番号入り 限定版（1冊）</div>
-    <div class="amt sans">¥3,800 <small>送料込・税込（予定）</small></div>
-  </div>
+  <!-- 3. 返報性＋リスク除去：無料で全部読める -->
+  <section>
+    <h2>まず、ぜんぶ無料で読めます</h2>
+    <p>これは脚色した物語ではなく、半年分の<b>実際の議事録</b>です。平文のままキーを push してしまった夜も、面談前に勝手にプランを書いた朝も、ぜんぶ。</p>
+    <p>本文は全文、無料で公開しています。<b>読んでから決めてください。</b>それでも「手元に置きたい」「あの人に渡したい」と思ったときだけ、この限定版があります。</p>
+    <a class="cta ghost sans" href="/">／ 全文を無料で読む（プレビュー）</a>
+  </section>
 
-  <a class="cta sans" href="mailto:kenny@atsume.io?subject=%E7%BD%B2%E5%90%8D%E9%99%90%E5%AE%9A%E7%89%88%20%E4%BA%88%E7%B4%84&body=%E5%B8%8C%E6%9C%9B%E5%86%8A%E6%95%B0%EF%BC%9A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E7%BD%B2%E5%90%8D%E5%AE%9B%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E7%95%AA%E5%8F%B7%EF%BC%88%E3%81%82%E3%82%8C%E3%81%B0%EF%BC%89%EF%BC%9A">席を予約する（1冊）</a>
-  <a class="cta ghost sans" href="mailto:kenny@atsume.io?subject=%E7%BD%B2%E5%90%8D%E9%99%90%E5%AE%9A%E7%89%88%20%E6%B3%95%E4%BA%BA%E3%81%BE%E3%81%A8%E3%82%81%E8%B2%B7%E3%81%84&body=%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E9%83%A8%E6%95%B0%EF%BC%88100%E9%83%A8%E5%8D%98%E4%BD%8D%EF%BC%89%EF%BC%9A">法人まとめ買い（100部単位・連番）を相談する</a>
+  <!-- 4. ベネフィット（保有効果・具体物） -->
+  <section>
+    <h2>この一冊だけのもの</h2>
+    <ul class="sans">
+      <li><b>あなたの番号</b>（1〜300）── 同じ番号は、二度と出ません</li>
+      <li>著者 <b>粟田Kenny</b> の手書き署名</li>
+      <li><b>取締役会テンプレート</b>別丁カード ── そのまま自分の会議に使える</li>
+      <li>Amazon を通さない<b>直販</b>。手から手へ、サイン本として</li>
+    </ul>
+    <p class="devil">「ね、その椅子、ほんとに要る？」<span>── 買う前に、たぶん悪魔がそう聞きます。要らないなら、無料の全文でいい。要ると思ったら、どうぞ。</span></p>
+  </section>
 
-  <p class="note sans">
-    ※ 受注制作です。予約が集まり次第まとめて印刷・署名し、順次お届けします。<br>
-    ※ まず読みたい方は Kindle 版（無制限・Kindle Unlimited 対応）をどうぞ。
-  </p>
+  <!-- 5. 希少性の"理由"＋損失回避 -->
+  <section>
+    <h2>なぜ 300 部だけなのか</h2>
+    <p>増刷で1万部、もできます。でもこの初版は、<b>著者が1冊ずつ署名し、できるだけ手渡しで届ける</b>と決めました。2人で署名して手渡せる限界が、300。だから300です。</p>
+    <p>番号は通し。早く取った人ほど、小さい番号。<b>同じ番号は、世界に一冊きり。</b></p>
+  </section>
+
+  <!-- 6. アンカリング＋価格＋クロージングCTA -->
+  <section id="order">
+    <h2>席を取る</h2>
+    <p class="anchor">経営の相談相手を雇えば、顧問料は月に数万円。会食一回でも数千円。<br>あなたの中の役員会は、<b>6人と1匹そろって ¥3,800。</b>一度きりの番号つきで。</p>
+    <div class="price">
+      <div class="n">署名番号入り 限定版（1冊）</div>
+      <div class="amt">¥3,800 <small>送料込・税込（予定）</small></div>
+    </div>
+    <div class="qtyrow"><label for="qty">冊数</label>
+      <select id="qty"><option>1</option><option>2</option><option>3</option><option>5</option><option>10</option></select>
+    </div>
+    <button class="cta sans" id="buy" type="button">いま席を取る（カードで購入）<span class="small">先着で小さい番号 ・ 受注制作で順次お届け</span></button>
+    <a class="cta ghost sans" id="buyFallback" style="display:none" href="mailto:kenny@atsume.io?subject=%E7%BD%B2%E5%90%8D%E9%99%90%E5%AE%9A%E7%89%88%20%E5%B8%AD%E3%82%92%E5%8F%96%E3%82%8B&body=%E5%B8%8C%E6%9C%9B%E5%86%8A%E6%95%B0%EF%BC%9A1%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E7%BD%B2%E5%90%8D%E5%AE%9B%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E7%95%AA%E5%8F%B7%EF%BC%88%E3%81%82%E3%82%8C%E3%81%B0%E3%83%BB%E5%85%88%E7%9D%80%EF%BC%89%EF%BC%9A%0A%E9%80%81%E3%82%8A%E5%85%88%EF%BC%9A">メールで予約する（オンライン決済は準備中）</a>
+    <a class="cta ghost sans" href="mailto:kenny@atsume.io?subject=%E7%BD%B2%E5%90%8D%E9%99%90%E5%AE%9A%E7%89%88%20%E6%B3%95%E4%BA%BA%E3%81%BE%E3%81%A8%E3%82%81%E8%B2%B7%E3%81%84&body=%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E9%83%A8%E6%95%B0%EF%BC%88100%E9%83%A8%E5%8D%98%E4%BD%8D%E3%83%BB%E9%80%A3%E7%95%AA%E5%8F%AF%EF%BC%89%EF%BC%9A">法人まとめ買い（チーム配布・連番）を相談する</a>
+    <p class="reassure">受注制作です。予約が集まり次第、署名して順次お届けします。<br>急がない方は Kindle 版（無制限・Kindle Unlimited 対応）からどうぞ。</p>
+  </section>
 
   <div class="foot">
-    発行 Atsume Press ／ 著者 粟田Kenny<br>
-    本文プレビュー: <a href="/">／（無料全文）</a>　・　お問い合わせ: kenny [at] atsume.io
+    発行 Atsume Press ／ 著者 粟田Kenny ・ お問い合わせ: kenny [at] atsume.io
   </div>
+
 </div>
 
 <script>
-  // 残席はサーバ未接続のため、ここを手で更新（例: 売れた分だけ left を下げる）
-  // 将来は番号管理台帳と連携。
-  var SOLD = 0;            // 売れた席数
-  var TOTAL = 300;
-  var leftEl = document.getElementById('left');
-  if (leftEl) leftEl.textContent = String(TOTAL - SOLD);
+(function(){
+  var buy=document.getElementById('buy'), fb=document.getElementById('buyFallback'), qty=document.getElementById('qty');
+  function showFallback(){ if(buy) buy.style.display='none'; if(fb) fb.style.display='block'; }
+  // 購入完了バナー
+  if(/[?&]status=success/.test(location.search)){ var t=document.getElementById('thanks'); if(t) t.style.display='block'; }
+  // 決済が未設定なら最初からメール予約に切替（GETはセッションを作らない）
+  fetch('/api/checkout',{method:'GET'}).then(function(r){return r.json();}).then(function(j){ if(!j||!j.configured) showFallback(); }).catch(showFallback);
+  if(buy) buy.addEventListener('click', async function(){
+    buy.disabled=true; var html=buy.innerHTML; buy.textContent='接続中…';
+    try{
+      var r=await fetch('/api/checkout',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({qty:Number(qty&&qty.value||1)})});
+      if(r.status===503){ showFallback(); return; }
+      var j=await r.json();
+      if(j&&j.url){ location.href=j.url; return; }
+      throw new Error((j&&j.error)||'error');
+    }catch(e){ showFallback(); }
+    finally{ buy.disabled=false; buy.innerHTML=html; }
+  });
+})();
 </script>
 </body>
 </html>
