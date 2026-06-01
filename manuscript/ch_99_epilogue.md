@@ -82,7 +82,7 @@
 ### 2. もし柔術に興味が湧いたら（これがいちばん書きたかった案内です）
 
 本文中で議長が日曜の午後に通っている柔術スタジオ、実在します。
-著者は **北参道の Sweep JiuJitsu Academy** に通っていて、**火曜 10:00 のクラス**にだいたいいます。
+著者も、**北参道の Sweep JiuJitsu Academy** に、ときどき通っています。
 「あの本を読んで来ました」と現地で声をかけてください。決められない夜の翌朝に身体を動かすと、頭が驚くほど軽くなることを、本書とセットでお伝えできたら、これ以上の嬉しさはありません。
 
 > 体験申し込み・場所詳細は「Sweep JiuJitsu Academy 北参道」で検索を。
@@ -91,7 +91,7 @@
 
 読みながら引っかかった一文、ジーンとした場面、悪魔のセリフへの不満、何でも歓迎です。
 
-- GitHub Discussions: https://github.com/awatatgr/the-board-of-one-and-a-devil/discussions
+- GitHub Discussions: https://github.com/yukihamada/the-board-of-one-and-a-devil/discussions
 - 感想ハッシュタグ: **#6人の役員と1匹の悪魔**
 
 ### 4. レビューを、未来の読者のために
