@@ -2207,6 +2207,7 @@ Amazon のレビュー欄に一文でも書いていただけると、次にこ�
 **著者**　粟田Kenny
 **発行日**　2026 年 5 月 30 日　初版第 1 刷
 **発行所**　Atsume Press
+**版種**　電子版（Kindle・無制限頒布）／物理署名版（初版 300 部・通し番号入り・限定直販）
 
 © 2026 粟田Kenny / Atsume Press. All rights reserved.
 
