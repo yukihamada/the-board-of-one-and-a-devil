@@ -41,7 +41,10 @@
   ],
   "description": {
     "short_amazon_2000bytes": "「ひとりは寂しくない。6人と、1匹いる。」\n\nひとり会社の代表が、自分の中にCEO・CMO・CTO・COO・CFOと、悪魔役の一匹を立てて、毎週日曜に取締役会を開いた半年間。\n\n──やらないを決められない夜。\n──API キーを平文で push してしまった夜。\n──大口取引先との関わり方を、金額そのまま、構造だけ変える決断。\n\n対話劇仕立てのドキュメンタリー風エッセイ。クスッと笑えて、ところどころジーンとくる、ソロプレナーと AI 時代の意思決定者に贈る12篇の議事録。",
-    "long_landing_2000chars_placeholder": "marketing/creatives/copy-deck.md を参照"
+    "long_landing_2000chars_placeholder": "marketing/creatives/copy-deck.md を参照",
+    "obi_catchcopy": "全員が賛成した夜が、いちばん危ない。",
+    "obi_sub": "あなたの中に、“反対する悪魔”を1匹。── ひとり会社の取締役会・半年間の議事録。決められない夜が、減る。",
+    "obi_note": "版元コピー（実在人物に非依存・本人承諾不要・即使用可）。人物名つきの推薦帯は別物で書面承諾が必須。詳細は kdp-package/promotional-blurbs.md"
   },
   "pricing": {
     "kindle_ebook_jpy": 980,
