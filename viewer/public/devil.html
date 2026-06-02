@@ -108,8 +108,10 @@
   </div>
 </div>
 
+<script>window.ENGINE_BASE=window.ENGINE_BASE||"https://engine.devil.pub";</script>
 <script>
 (function(){
+  var BASE=(window.ENGINE_BASE||"").replace(/\/$/,"");
   var msg=document.getElementById('msg'), c=document.getElementById('c');
   var ask=document.getElementById('ask'), askB=document.getElementById('askBoard');
   var reply=document.getElementById('reply');
@@ -126,7 +128,7 @@
     lock(true);
     thinking(mode==='board'?'役員会、招集中……':'悪魔が、リンゴをかじっている……');
     try{
-      var r=await fetch('/api/devil',{method:'POST',headers:{'content-type':'application/json'},
+      var r=await fetch(BASE+'/api/devil',{method:'POST',headers:{'content-type':'application/json'},
         body:JSON.stringify({message:text,mode:mode})});
       var j=await r.json();
       if(!r.ok){ reply.innerHTML='<p class="err">'+(j.error==='devil_sleeping'?'悪魔はいま、眠っています（準備中）。':'うまく繋がらなかった。もう一度。')+'</p>'; lock(false); return; }
