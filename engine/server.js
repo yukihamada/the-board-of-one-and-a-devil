@@ -39,8 +39,28 @@ const J = (res, code, obj) => {
   });
   res.end(JSON.stringify(obj));
 };
-const body = (req) => new Promise((r) => { let d=""; req.on("data",c=>d+=c); req.on("end",()=>r(d)); });
+const body = (req) => new Promise((r) => { let d=""; req.on("data",c=>{d+=c; if(d.length>20000) req.destroy();}); req.on("end",()=>r(d)); });
 const esc = (s) => String(s||"").replace(/[<>&]/g,m=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[m]));
+
+// ── レート制限（IP別・インメモリ）。無認証の公開LLM/書込を濫用から守る ──
+const clientIP = (req) =>
+  (req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.socket.remoteAddress || "?")
+    .toString().split(",")[0].trim();
+const buckets = new Map(); // key -> [timestamps]
+function tooMany(ip, name, limit, windowMs) {
+  const now = Date.now(), key = name + ":" + ip;
+  const arr = (buckets.get(key) || []).filter((t) => now - t < windowMs);
+  if (arr.length >= limit) { buckets.set(key, arr); return true; }
+  arr.push(now); buckets.set(key, arr);
+  return false;
+}
+setInterval(() => { // 古いバケット掃除（メモリ肥大防止）
+  const now = Date.now();
+  for (const [k, arr] of buckets) {
+    const keep = arr.filter((t) => now - t < 3600000);
+    if (keep.length) buckets.set(k, keep); else buckets.delete(k);
+  }
+}, 600000).unref();
 
 async function ollama(model, system, user, json) {
   const r = await fetch(`${OLLAMA}/api/chat`, {
@@ -137,6 +157,7 @@ const server = createServer(async (req, res) => {
 
     // 議題を受ける（悩み + メール）→ 即 token返し、生成は非同期
     if (url === "/api/intake" && req.method === "POST") {
+      if (tooMany(clientIP(req), "intake", 5, 3600000)) return J(res,429,{error:"rate_limited"});
       let b={}; try{ b=JSON.parse(await body(req)||"{}"); }catch{}
       const worry=String(b.worry||"").slice(0,1200).trim();
       const email=String(b.email||"").slice(0,200).trim();
@@ -159,6 +180,7 @@ const server = createServer(async (req, res) => {
 
     // 対話の悪魔（問いを1つ）/ 取締役会の即席版
     if (url === "/api/devil" && req.method === "POST") {
+      if (tooMany(clientIP(req), "devil", 15, 600000)) return J(res,429,{error:"rate_limited"});
       let b={}; try{ b=JSON.parse(await body(req)||"{}"); }catch{}
       const msg=String(b.message||"").slice(0,600).trim();
       if (!msg) return J(res,400,{error:"say_something"});
@@ -181,7 +203,8 @@ const server = createServer(async (req, res) => {
     J(res,404,{error:"not_found"});
   } catch (e) { J(res,500,{error:"internal", detail:String(e.message||e)}); }
 });
-server.listen(PORT, ()=>console.log(`minutes engine on :${PORT}  deep=${MODEL_DEEP} fast=${MODEL_FAST} dry_run=${DRY_RUN}`));
+// 127.0.0.1 のみ bind（LAN露出を断つ。cloudflared は localhost 経由で届く）
+server.listen(PORT, "127.0.0.1", ()=>console.log(`minutes engine on 127.0.0.1:${PORT}  deep=${MODEL_DEEP} fast=${MODEL_FAST} dry_run=${DRY_RUN}`));
 
 // ── レンダリング ─────────────────────────────────────────
 function minutesRows(m){
