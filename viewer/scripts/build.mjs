@@ -21,7 +21,7 @@ const ILLUS = [
   { match: "第7回 取締役会", file: "ch07-houses.png", alt: "数十軒の家を、ひとつのスキーマに並べる" },
   { match: "第8回 取締役会", file: "ch08-structure.png", alt: "金額は同じ、構造を変える二枚の紙" },
   { match: "第9回 取締役会", file: "ch09-words.png", alt: "便利な言葉を一筋の線で消し、書き直す" },
-  { match: "第10回 取締役会", file: "ch10-finale.png", alt: "半年を閉じる、リンゴの芯と束ねた議事録" },
+  { match: "第11回 取締役会", file: "ch10-finale.png", alt: "半年を閉じる、リンゴの芯と束ねた議事録" },
   { match: "エピローグ", file: "ch99-epilogue.png", alt: "ドアを閉じる手と、7 脚の椅子の影" },
 ];
 
