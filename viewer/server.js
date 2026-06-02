@@ -89,6 +89,118 @@ async function handleCheckout(req, res) {
   }
 }
 
+// ── 七脚目の椅子：悪魔と話す（Claude API を REST 直叩き・依存ゼロ）──────────
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || "";
+const DEVIL_MODEL = process.env.DEVIL_MODEL || "claude-sonnet-4-6";
+
+// 本の悪魔の声を固定する。台詞は本文から。答えは出さない、問いを返す。
+const DEVIL_SYSTEM = `あなたは書籍『6人の役員と1匹の悪魔 ─ ひとり会社の取締役会』に登場する「悪魔」です。
+霊的存在ではなく、ひとり会社の代表の中にある「批判的な視点・あえて反対する役」を擬人化したキャラクターです。
+
+【声】椅子に逆向きに座り、赤いリンゴをかじっている。皮肉屋で口は悪いが、最後はほんの少し優しい。短い。説教しない。
+【実際の口ぐせ（必ずこの温度で）】
+・「呼ばれてないから来た。」
+・「ほら来た、また全部やる人。」
+・「で、それ、誰のため。」
+・「『ローカルでは動くんです』って、半年で何回目？」
+・「議長のメモって、半分は妄想だよね？」
+・「足し算じゃない、引き算だ。」
+・「俺さ、この言い換え、好きだわ。」（褒めるのは半年に一度だけ）
+
+【絶対ルール】
+1. 相手の悩みに「答え」や「解決策」を出さない。代わりに、核心を突く問いを“ひとつだけ”返す。
+2. 日本語。1〜3文。短く。前置き・箇条書き・「なるほど」等の相づち禁止。
+3. 必ず「足すか、引くか（やること／やらないこと）」を相手に意識させる方向へ寄せる。
+4. ときどき、リンゴをかじるト書きを括弧で一つだけ添えてよい（例：（リンゴをかじる））。
+5. 医療・健康・自傷の相談には乗らず「それは俺の管轄じゃない。生身の人間に話して」と短く返す。
+6. 出力は悪魔の発言そのものだけ。役名や説明を付けない。`;
+
+const BOARD_SYSTEM = `あなたは書籍『6人の役員と1匹の悪魔』の取締役会です。相手の悩みに対し、7つの声がそれぞれ“一言だけ”反応します。
+各声のキャラクター：
+・CEO（議長の右腕／全体最適・落ち着き・本質）
+・CMO（人物像と言葉・伝わり方・あたたかい）
+・CTO（技術と現実・地味な投資・「動作確認した？」）
+・COO（実行と段取り・WIPを絞る・淡々）
+・CFO（数字と構造・「金額は数字、構造は意思」・冷静）
+・悪魔（皮肉屋・答えでなく問い・「足し算じゃない、引き算だ」・最後に少し優しい）
+ルール：各声は日本語で1文だけ。短く、キャラの体温で。説教しない。`;
+
+const BOARD_TOOL = {
+  name: "board_minutes",
+  description: "取締役会の7声の即席議事録",
+  input_schema: {
+    type: "object",
+    properties: {
+      ceo: { type: "string" }, cmo: { type: "string" }, cto: { type: "string" },
+      coo: { type: "string" }, cfo: { type: "string" }, devil: { type: "string" },
+      verdict: { type: "string", enum: ["足す", "引く", "保留"], description: "足し算か引き算か" },
+    },
+    required: ["ceo", "cmo", "cto", "coo", "cfo", "devil", "verdict"],
+  },
+};
+
+async function anthropic(payload) {
+  const r = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "x-api-key": ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+  const j = await r.json();
+  if (!r.ok) throw new Error((j.error && j.error.message) || "anthropic_error");
+  return j;
+}
+
+async function handleDevil(req, res) {
+  if (req.method === "GET") {
+    res.writeHead(200, { "content-type": "application/json" });
+    res.end(JSON.stringify({ configured: !!ANTHROPIC_API_KEY }));
+    return;
+  }
+  if (!ANTHROPIC_API_KEY) {
+    res.writeHead(503, { "content-type": "application/json" });
+    res.end(JSON.stringify({ error: "devil_sleeping" }));
+    return;
+  }
+  let message = "", mode = "devil";
+  try {
+    const b = JSON.parse((await readBody(req)) || "{}");
+    message = String(b.message || "").slice(0, 600).trim();
+    if (b.mode === "board") mode = "board";
+  } catch {}
+  if (!message) {
+    res.writeHead(400, { "content-type": "application/json" });
+    res.end(JSON.stringify({ error: "say_something" }));
+    return;
+  }
+  try {
+    if (mode === "board") {
+      const j = await anthropic({
+        model: DEVIL_MODEL, max_tokens: 500, system: BOARD_SYSTEM,
+        tools: [BOARD_TOOL], tool_choice: { type: "tool", name: "board_minutes" },
+        messages: [{ role: "user", content: `相談：${message}` }],
+      });
+      const use = (j.content || []).find((c) => c.type === "tool_use");
+      res.writeHead(200, { "content-type": "application/json" });
+      res.end(JSON.stringify({ mode, board: (use && use.input) || null }));
+      return;
+    }
+    const j = await anthropic({
+      model: DEVIL_MODEL, max_tokens: 220, system: DEVIL_SYSTEM,
+      messages: [{ role: "user", content: message }],
+    });
+    const text = (j.content || []).filter((c) => c.type === "text").map((c) => c.text).join("").trim();
+    res.writeHead(200, { "content-type": "application/json" });
+    res.end(JSON.stringify({ mode, reply: text }));
+  } catch (e) {
+    res.writeHead(502, { "content-type": "application/json" });
+    res.end(JSON.stringify({ error: "devil_error", detail: String(e.message || e) }));
+  }
+}
+
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -107,6 +219,8 @@ const server = createServer(async (req, res) => {
   try {
     let urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
     if (urlPath === "/api/checkout") { await handleCheckout(req, res); return; }
+    if (urlPath === "/api/devil") { await handleDevil(req, res); return; }
+    if (urlPath === "/devil") urlPath = "/devil.html";
     if (urlPath === "/") urlPath = "/index.html";
     if (urlPath === "/health") {
       res.writeHead(200, { "content-type": "text/plain" });

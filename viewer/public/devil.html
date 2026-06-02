@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>七脚目の椅子 ─ 悪魔と話す ｜ 6人の役員と1匹の悪魔</title>
+<meta property="og:title" content="七脚目の椅子 ─ あなたの中の悪魔と話す" />
+<meta property="og:description" content="答えはくれない。問いを、ひとつだけ。『6人の役員と1匹の悪魔』の隠し部屋。" />
+<style>
+  :root{
+    --bg:#14110f; --bg2:#1b1714; --ink:#ece6dd; --dim:#9a9088;
+    --line:#322c27; --red:#c0392b; --cream:#f3ede2;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;line-height:1.85;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px;margin:0 auto;padding:48px 22px 96px}
+  .eyebrow{font-size:12px;letter-spacing:.32em;color:var(--dim);
+    text-align:center;margin:0 0 14px;font-family:system-ui,sans-serif}
+  h1{font-size:clamp(26px,6vw,40px);text-align:center;margin:0 0 6px;font-weight:600;letter-spacing:.04em}
+  .lede{text-align:center;color:var(--dim);font-size:15px;margin:0 auto 38px;max-width:30em}
+  .chair{display:block;margin:0 auto 30px;width:96px;height:96px;opacity:.9}
+  .panel{background:var(--bg2);border:1px solid var(--line);border-radius:14px;
+    padding:22px 20px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  textarea{width:100%;background:#0f0c0a;color:var(--ink);border:1px solid var(--line);
+    border-radius:10px;padding:14px;font:inherit;font-size:16px;resize:vertical;min-height:96px;line-height:1.7}
+  textarea:focus{outline:none;border-color:#5a4d44}
+  .row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  button{flex:1;min-width:160px;cursor:pointer;font-family:system-ui,sans-serif;font-size:15px;
+    border-radius:10px;padding:14px 16px;border:1px solid var(--line);transition:.18s}
+  .ask{background:var(--red);color:#fff;border-color:var(--red);font-weight:600}
+  .ask:hover{filter:brightness(1.08)}
+  .board{background:transparent;color:var(--dim)}
+  .board:hover{color:var(--ink);border-color:#5a4d44}
+  button:disabled{opacity:.45;cursor:wait}
+  .count{font-family:system-ui,sans-serif;font-size:12px;color:var(--dim);text-align:right;margin:6px 2px 0}
+  .reply{margin-top:26px;min-height:1px}
+  .devil-line{font-size:21px;line-height:1.9;border-left:2px solid var(--red);
+    padding:4px 0 4px 18px;margin:0;animation:fade .7s ease both}
+  .devil-tag{display:block;font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.2em;
+    color:var(--red);margin-bottom:10px;text-transform:uppercase}
+  .minutes{margin-top:24px;display:grid;gap:2px;border:1px solid var(--line);border-radius:12px;overflow:hidden;animation:fade .7s ease both}
+  .minutes .m{display:grid;grid-template-columns:62px 1fr;gap:0;background:var(--bg2);padding:13px 15px;border-bottom:1px solid var(--line)}
+  .minutes .m:last-child{border-bottom:0}
+  .minutes .who{font-family:system-ui,sans-serif;font-size:11px;color:var(--dim);letter-spacing:.1em;padding-top:3px}
+  .minutes .m.dv .who{color:var(--red)}
+  .minutes .m.dv{background:#1f1512}
+  .verdict{text-align:center;font-family:system-ui,sans-serif;font-size:13px;letter-spacing:.2em;
+    color:var(--cream);padding:14px;background:#0f0c0a}
+  .verdict b{color:var(--red);font-size:16px}
+  .err{color:#e08b80;font-size:14px;margin-top:18px;font-family:system-ui,sans-serif}
+  .thinking{color:var(--dim);font-style:italic;animation:pulse 1.2s ease-in-out infinite}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  @keyframes pulse{50%{opacity:.45}}
+  .foot{margin-top:54px;text-align:center;color:var(--dim);font-size:13px;line-height:2}
+  .foot a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--line)}
+  details{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;color:var(--dim);font-size:14px}
+  summary{cursor:pointer;font-family:system-ui,sans-serif;letter-spacing:.04em;color:#b8aea3}
+  .reveal{margin-top:14px;line-height:2.1}
+  .reveal b{color:var(--cream)}
+  .reveal .v{color:var(--red);font-weight:600}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">THE SEVENTH CHAIR ・ 七脚目の椅子</p>
+  <!-- 逆向きの椅子（本の悪魔の指定席） -->
+  <svg class="chair" viewBox="0 0 100 100" fill="none" stroke="#c0392b" stroke-width="2.2" stroke-linecap="round">
+    <path d="M32 30 L32 78 M68 30 L68 78"/>
+    <path d="M30 30 L70 30 L70 18 L30 18 Z" fill="#1b1714"/>
+    <path d="M32 52 L68 52"/>
+    <path d="M24 78 L76 78"/>
+    <circle cx="50" cy="12" r="4.5" fill="#c0392b" stroke="none"/>
+  </svg>
+  <h1>悪魔と話す</h1>
+  <p class="lede">答えはくれない。問いを、ひとつだけ。<br>あなたの中の「反対する声」に、椅子を一脚。</p>
+
+  <div class="panel">
+    <textarea id="msg" maxlength="600" placeholder="いま、迷っていることを、ひとつ。&#10;（例：新しい案件、受けるか迷ってる。面白そうだけど時間がない。）"></textarea>
+    <div class="count"><span id="c">0</span>/600</div>
+    <div class="row">
+      <button class="ask" id="ask">悪魔に聞く</button>
+      <button class="board" id="askBoard">6人にも、かける</button>
+    </div>
+  </div>
+
+  <div class="reply" id="reply" aria-live="polite"></div>
+
+  <details>
+    <summary>＊ この部屋は、本の中から来た人のための隠し部屋です</summary>
+    <div class="reveal">
+      『6人の役員と1匹の悪魔』の議長メモ。結びの一文だけを、<b>第5回から最終回まで</b>、頭の音を縦に読むと──<br>
+      ひ・と・り・じゃ・な・い。<br>
+      <b>「ひとりじゃない」</b>。<br><br>
+      そして第10回は、<span class="v">開かなかった回</span>。やらないことを決める本に、空席の回がひとつ。<br>
+      椅子は、7脚あっていい。<br><br>
+      <a href="/" style="color:#f3ede2">← 本文（全文無料）にもどる</a>
+    </div>
+  </details>
+
+  <div class="foot">
+    『6人の役員と1匹の悪魔 ─ ひとり会社の取締役会』<br>
+    <a href="/">本文を読む（無料）</a> ・ <a href="/limited.html">署名番号入り 限定版</a><br>
+    発行 Atsume Press
+  </div>
+</div>
+
+<script>
+(function(){
+  var msg=document.getElementById('msg'), c=document.getElementById('c');
+  var ask=document.getElementById('ask'), askB=document.getElementById('askBoard');
+  var reply=document.getElementById('reply');
+  var NAMES={ceo:'CEO',cmo:'CMO',cto:'CTO',coo:'COO',cfo:'CFO',devil:'悪魔'};
+  msg.addEventListener('input',function(){c.textContent=msg.value.length;});
+
+  function thinking(t){ reply.innerHTML='<p class="thinking">'+t+'</p>'; }
+  function esc(s){ return String(s||'').replace(/[<>&]/g,function(m){return{'<':'&lt;','>':'&gt;','&':'&amp;'}[m];}); }
+  function lock(v){ ask.disabled=v; askB.disabled=v; }
+
+  async function call(mode){
+    var text=msg.value.trim();
+    if(!text){ msg.focus(); return; }
+    lock(true);
+    thinking(mode==='board'?'役員会、招集中……':'悪魔が、リンゴをかじっている……');
+    try{
+      var r=await fetch('/api/devil',{method:'POST',headers:{'content-type':'application/json'},
+        body:JSON.stringify({message:text,mode:mode})});
+      var j=await r.json();
+      if(!r.ok){ reply.innerHTML='<p class="err">'+(j.error==='devil_sleeping'?'悪魔はいま、眠っています（準備中）。':'うまく繋がらなかった。もう一度。')+'</p>'; lock(false); return; }
+      if(mode==='board' && j.board){
+        var b=j.board, rows='';
+        ['ceo','cmo','cto','coo','cfo','devil'].forEach(function(k){
+          rows+='<div class="m'+(k==='devil'?' dv':'')+'"><div class="who">'+NAMES[k]+'</div><div>'+esc(b[k])+'</div></div>';
+        });
+        reply.innerHTML='<span class="devil-tag">あなたの取締役会・議事録</span><div class="minutes">'+rows+
+          '<div class="verdict">本日の決定 ── <b>'+esc(b.verdict)+'</b></div></div>';
+      } else {
+        reply.innerHTML='<span class="devil-tag">悪魔</span><p class="devil-line">'+esc(j.reply)+'</p>';
+      }
+    }catch(e){ reply.innerHTML='<p class="err">通信に失敗しました。もう一度。</p>'; }
+    lock(false);
+  }
+  ask.addEventListener('click',function(){call('devil');});
+  askB.addEventListener('click',function(){call('board');});
+  msg.addEventListener('keydown',function(e){ if((e.metaKey||e.ctrlKey)&&e.key==='Enter') call('devil'); });
+})();
+</script>
+</body>
+</html>
